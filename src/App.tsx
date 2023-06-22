@@ -1,30 +1,37 @@
-import React from 'react';
-import './App.css';
-import { useState } from 'react';
-import Calendar from 'react-calendar';
+import React from "react";
+import "./App.css";
+import { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import { Value } from "react-calendar/dist/cjs/shared/types";
+import Daytime from "./Component/Daytime";
 
-
-
-const App : React.FC <{}> =() => {
-  const [day, setDay] = useState <Date>(new Date())
-  const correntYear: number = new Date().getFullYear()
-
+const App: React.FC<{}> = () => {
+  const [day, setDay] = useState<Value>(new Date());
+ 
   
+  const handleChange = (day:Value) => {
+    setDay(day)
+    console.log(day)
+    
 
-  console.log(day)
+  };
+
+
   return (
     <div className="App">
       <title>Calendar</title>
       <header className="App-header">
-        <h1>Calendar {correntYear}</h1>
+        <h1>React Calendar</h1>
       </header>
-      <div className='calendar-container'>
-        <Calendar onClickDay={()=>setDay} value={day}/>
+      <div className="calendar-container">
+        <Calendar onChange={(day)=>handleChange(day)} value={day} />
       </div>
-      <p className='Calendar-Day'> 
-      <span className='bold'>Selected Date:</span> {day.toDateString()}</p>
+      <div className="DayClendar"></div>
+      <Daytime/>
     </div>
+
   );
-}
+};
 
 export default App;
