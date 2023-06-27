@@ -37,8 +37,11 @@ const Daytime: React.FC<{ day: Value }> = ({ day }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData : string = e.currentTarget.textarea.value
-    console.log(formData)
+    const textareaData: string = e.currentTarget.textarea.value;
+    const dayofForm = e.currentTarget;
+    console.log(count, dayofForm);
+    
+    
   };
 
   return (
@@ -46,7 +49,7 @@ const Daytime: React.FC<{ day: Value }> = ({ day }) => {
       <form className="DayForm" onSubmit={(e) => handleSubmit(e)}>
         <div className="textareaDiv">
           <h2>Write down your toughts</h2>
-          <h4>{day?.toLocaleString()}</h4>
+          <h4 id="dayOfForm">{day?.toLocaleString()}</h4>
           <textarea id="textarea" placeholder="how is your day?"></textarea>
         </div>
         <button onClick={(e) => handleMood(e)}>Choose your mood</button>
