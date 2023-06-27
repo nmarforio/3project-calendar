@@ -25,7 +25,7 @@ const App: React.FC<{}> = () => {
         <h1>React Calendar</h1>
       </header>
       <div className="calendar-container">
-        <Calendar className={['c1','c2']}onChange={(day)=>handleChange(day)} value={day} />
+        <Calendar onChange={(day)=>handleChange(day)} value={day} />
       </div>
       <div className="DayClendar"></div>
       <Daytime day={day}/>

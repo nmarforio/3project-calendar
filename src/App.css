@@ -9,6 +9,12 @@
   display: flex;
   justify-content: center;
 }
+.greenButton:focus{
+  background-color: darkgreen;  
+}
+.redButton:visited{
+  background-color: brown;
+}
 
 @keyframes App-logo-spin {
   from {
