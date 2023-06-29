@@ -13,8 +13,6 @@ const App: React.FC<{}> = () => {
   const handleChange = (day:Value) => {
     setDay(day)
     console.log(day)
-    
-
   };
 
 

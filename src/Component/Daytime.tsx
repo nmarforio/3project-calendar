@@ -8,6 +8,8 @@ const Daytime: React.FC<{ day: Value }> = ({ day }) => {
   const [yellowButton, setYellowButton] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0);
 
+
+  
   const handleMood = (e: React.MouseEvent) => {
     e.preventDefault();
     setMood(!mood);
@@ -38,10 +40,7 @@ const Daytime: React.FC<{ day: Value }> = ({ day }) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const textareaData: string = e.currentTarget.textarea.value;
-    const dayofForm = e.currentTarget;
-    console.log(count, dayofForm);
-    
-    
+    console.log(count, textareaData);
   };
 
   return (
