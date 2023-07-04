@@ -6,8 +6,7 @@ const Daytime: React.FC<{ day: Value }> = ({ day }) => {
   const [redButton, setRedButton] = useState<boolean>(false);
   const [greenButton, setGreenButton] = useState<boolean>(false);
   const [yellowButton, setYellowButton] = useState<boolean>(false);
-  const [count, setCount] = useState<number>(0);
-  const [dayMoodData, setDayMoodData] = useState<Array<object>>([]);
+  const [decidedMood, setDecidedMood] = useState<string>("");
 
   const handleMood = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -19,33 +18,35 @@ const Daytime: React.FC<{ day: Value }> = ({ day }) => {
     setGreenButton(!greenButton);
     setYellowButton(false);
     setRedButton(false);
-    setCount(1);
+    setDecidedMood("Happy");
   };
   const handleYellowClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setYellowButton(!yellowButton);
     setGreenButton(false);
     setRedButton(false);
-    setCount(2);
+    setDecidedMood("Ok");
   };
   const handleRedClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setRedButton(!redButton);
     setGreenButton(false);
     setYellowButton(false);
-    setCount(3);
+    setDecidedMood("Low");
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const textareaData: string = e.currentTarget.textarea.value;
-
-    const dayMoodData: Array<object> = [
-      { count: count, toughts: textareaData, day: day },
-    ];
-    setDayMoodData(dayMoodData);
+    const dayMoodData: object = {
+      mood: decidedMood,
+      toughts: textareaData,
+      day: day,
+    };
+    localStorage.setItem('dayData', JSON.stringify(dayMoodData))
+    console.log(dayMoodData, "halo");
   };
-  console.log(dayMoodData, "halo");
+  
 
   return (
     <>
