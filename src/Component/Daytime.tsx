@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Value } from "react-calendar/dist/cjs/shared/types";
 
 const Daytime: React.FC<{ day: Value }> = ({ day }) => {
@@ -7,9 +7,8 @@ const Daytime: React.FC<{ day: Value }> = ({ day }) => {
   const [greenButton, setGreenButton] = useState<boolean>(false);
   const [yellowButton, setYellowButton] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0);
+  const [dayMoodData, setDayMoodData] = useState<Array<object>>([]);
 
-
-  
   const handleMood = (e: React.MouseEvent) => {
     e.preventDefault();
     setMood(!mood);
@@ -40,8 +39,13 @@ const Daytime: React.FC<{ day: Value }> = ({ day }) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const textareaData: string = e.currentTarget.textarea.value;
-    console.log(count, textareaData);
+
+    const dayMoodData: Array<object> = [
+      { count: count, toughts: textareaData, day: day },
+    ];
+    setDayMoodData(dayMoodData);
   };
+  console.log(dayMoodData, "halo");
 
   return (
     <>

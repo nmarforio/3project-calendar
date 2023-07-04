@@ -14,6 +14,10 @@ const App: React.FC<{}> = () => {
     setDay(day)
     console.log(day)
   };
+  
+  const dayData = localStorage.getItem('dayData')
+  console.log(dayData)
+
 
 
   return (
