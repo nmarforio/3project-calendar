@@ -51,7 +51,7 @@ const MoodForm: React.FC<{ day: Value }> = ({ day }) => {
 
   return (
     <>
-      <form className="DayForm" onSubmit={(e) => handleSubmit(e)}>
+      <form className="moodForm" onSubmit={(e) => handleSubmit(e)}>
         <div className="textareaDiv">
           <h2>Write down your toughts</h2>
           <h4 id="dayOfForm">{day!.toLocaleString()}</h4>

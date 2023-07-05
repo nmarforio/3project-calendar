@@ -129,6 +129,14 @@
 .redButton:focus:not(:active) {
   box-shadow: rgba(194, 29, 29, 0.25) 0 0 0 .125em;
 }
+.moodForm{
+  background-color: #f2e5b0;
+  width: fit-content;
+  margin-left: 50px;
+  border-radius: 8px;
+  margin-top: 50px;
+  padding: 10px 10px;
+}
 
 @keyframes App-logo-spin {
   from {
