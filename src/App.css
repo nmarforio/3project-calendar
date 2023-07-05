@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  display: grid;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -137,6 +138,10 @@
   margin-top: 50px;
   padding: 10px 10px;
 }
+.dayCard{
+  width: fit-content;
+}
+
 
 @keyframes App-logo-spin {
   from {

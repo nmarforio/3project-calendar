@@ -18,12 +18,14 @@ const DayCard: React.FC<DayDatas> = ({ dayData }: DayDatas) => {
   console.log(newDateString, 'After push')
    return (
     <>
+   
       <h3>Your thoughts</h3>
       <div>
         <p>{dayData.mood}</p>
         <p>{dayData.toughts}</p>
         <p>{newDateString.join('')}</p>
       </div>
+  
     </>
   );
       

@@ -7,7 +7,7 @@ import { Value } from "react-calendar/dist/cjs/shared/types";
 import MoodForm from "./Components/MoodForm";
 import DayCard from "./Components/DayCard";
 
-const App : React.FC <{}> = () => {
+const App: React.FC<{}> = () => {
   const [day, setDay] = useState<Value>(new Date());
 
   const handleChange = (day: Value) => {
@@ -19,8 +19,12 @@ const App : React.FC <{}> = () => {
   const dayData = JSON.parse(storageData!);
   console.log(dayData, "Homepage");
 
-  const dayCardcomponent = dayData? <DayCard dayData={dayData}/> : <div></div>;
- 
+  const dayCardcomponent = dayData ? (
+    <DayCard dayData={dayData} />
+  ) : (
+    <div></div>
+  );
+
   return (
     <div className="App">
       <title>Calendar</title>
@@ -30,15 +34,10 @@ const App : React.FC <{}> = () => {
       <div className="calendar-container">
         <Calendar onChange={(day) => handleChange(day!)} value={day} />
       </div>
-      <div className="DayClendar"></div>
       <MoodForm day={day} />
-      <div>
-       {dayCardcomponent}
-      </div>
+      <div className="cardDiv">{dayCardcomponent}</div>
     </div>
   );
-  
 };
-
 
 export default App;
