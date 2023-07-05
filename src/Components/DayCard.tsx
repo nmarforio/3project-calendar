@@ -1,24 +1,32 @@
-import { Value } from "react-calendar/dist/cjs/shared/types"
-import DayData from "../interfaces"
+import { Value } from "react-calendar/dist/cjs/shared/types";
+import DayData from "../interfaces";
 
-interface DayDatas{
-    dayData : DayData
+interface DayDatas {
+  dayData: DayData;
 }
 
+const DayCard: React.FC<DayDatas> = ({ dayData }: DayDatas) => {
 
-const DayCard : React.FC <DayDatas> = ({dayData}:DayDatas)=>{
-    
-    console.log(dayData, "TYPEOFDATA")
-    return(
+  const dateString: string[] = dayData.day.split("");
+  let newDateString : string[] = []
+  for (let i = 0; i < dateString.length; i++){
+    if (i <= 9 ){
+        let date = dateString!.at(i)
+        newDateString.push(date!)    }
+  }
+  console.log(newDateString, 'After push')
+
+  
+  return (
     <>
-        <h3>Your thoughts</h3>
-        <div>
-            <p>{dayData.mood}</p>
-            <p>{dayData.toughts}</p>
-            <p>{dayData.day}</p>
-        </div>
+      <h3>Your thoughts</h3>
+      <div>
+        <p>{dayData.mood}</p>
+        <p>{dayData.toughts}</p>
+        <p>{newDateString.join('')}</p>
+      </div>
     </>
-)
-}
+  );
+};
 
-export default DayCard
+export default DayCard;
