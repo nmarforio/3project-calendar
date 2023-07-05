@@ -7,17 +7,16 @@ interface DayDatas {
 
 const DayCard: React.FC<DayDatas> = ({ dayData }: DayDatas) => {
 
-  const dateString: string[] = dayData.day.split("");
-  let newDateString : string[] = []
+    const dateString: string[] = dayData.day.split("");
+    let newDateString : string[] = []
   for (let i = 0; i < dateString.length; i++){
     if (i <= 9 ){
         let date = dateString!.at(i)
-        newDateString.push(date!)    }
-  }
-  console.log(newDateString, 'After push')
-
+        newDateString.push(date!) }
+    }
   
-  return (
+  console.log(newDateString, 'After push')
+   return (
     <>
       <h3>Your thoughts</h3>
       <div>
@@ -27,6 +26,7 @@ const DayCard: React.FC<DayDatas> = ({ dayData }: DayDatas) => {
       </div>
     </>
   );
+      
 };
 
 export default DayCard;

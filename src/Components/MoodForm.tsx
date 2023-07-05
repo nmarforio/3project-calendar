@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Value } from "react-calendar/dist/cjs/shared/types";
 
-const Daytime: React.FC<{ day: Value }> = ({ day }) => {
+const MoodForm: React.FC<{ day: Value }> = ({ day }) => {
   const [mood, setMood] = useState<boolean>(false);
   const [redButton, setRedButton] = useState<boolean>(false);
   const [greenButton, setGreenButton] = useState<boolean>(false);
@@ -36,15 +36,16 @@ const Daytime: React.FC<{ day: Value }> = ({ day }) => {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const textareaData: string = e.currentTarget.textarea.value;
-    const dayMoodData: object = {
-      mood: decidedMood,
-      toughts: textareaData,
-      day: day,
-    };
-    localStorage.setItem('dayData', JSON.stringify(dayMoodData))
-    console.log(dayMoodData, "halo");
+    
+      e.preventDefault();
+      const textareaData: string = e.currentTarget.textarea.value;
+      const dayMoodData: object = {
+        mood: decidedMood,
+        toughts: textareaData,
+        day: day,
+      };
+      localStorage.setItem('dayData', JSON.stringify(dayMoodData))
+      window.location.reload()
   };
   
 
@@ -53,7 +54,7 @@ const Daytime: React.FC<{ day: Value }> = ({ day }) => {
       <form className="DayForm" onSubmit={(e) => handleSubmit(e)}>
         <div className="textareaDiv">
           <h2>Write down your toughts</h2>
-          <h4 id="dayOfForm">{day?.toLocaleString()}</h4>
+          <h4 id="dayOfForm">{day!.toLocaleString()}</h4>
           <textarea id="textarea" placeholder="how is your day?"></textarea>
         </div>
         <button onClick={(e) => handleMood(e)}>Choose your mood</button>
@@ -91,4 +92,4 @@ const Daytime: React.FC<{ day: Value }> = ({ day }) => {
   );
 };
 
-export default Daytime;
+export default MoodForm;
