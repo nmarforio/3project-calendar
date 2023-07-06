@@ -34,8 +34,10 @@ const App: React.FC<{}> = () => {
       <div className="calendar-container">
         <Calendar onChange={(day) => handleChange(day!)} value={day} />
       </div>
+      <div className='inpuCardContainer'>
       <MoodForm day={day} />
       <div className="cardDiv">{dayCardcomponent}</div>
+      </div>
     </div>
   );
 };

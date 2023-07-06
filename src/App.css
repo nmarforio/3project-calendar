@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
   display: grid;
@@ -5,22 +9,72 @@
 
 @media (prefers-reduced-motion: no-preference) {
 }
-
+.moodForm {
+  background-image: url("/public/paper.png");
+  width: fit-content;
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  box-shadow: -5px 8px 13px -4px rgba(187, 107, 71, 0.75);
+  -webkit-box-shadow: -5px 8px 13px -4px rgba(187, 107, 71, 0.75);
+  -moz-box-shadow: -5px 8px 13px -4px rgba(187, 107, 71, 0.75);
+}
+.cardDiv {
+  background-image: url("/public/paper.png");
+  padding: 10px 30px;
+  border-radius: 8px;
+  box-shadow: -5px 8px 13px -4px rgba(187, 107, 71, 0.75);
+  -webkit-box-shadow: -5px 8px 13px -4px rgba(187, 107, 71, 0.75);
+  -moz-box-shadow: -5px 8px 13px -4px rgba(187, 107, 71, 0.75);
+}
+.textarea {
+  font-family: "Neucha", cursive;
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+}
 .calendar-container {
   display: flex;
   justify-content: center;
 }
-
+.inpuCardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+.buttonDiv {
+  display: grid;
+  justify-items: center;
+}
+.chooseMoodButton {
+  font-family: "Neucha", cursive;
+  font-size: medium;
+  padding: 5px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: -5px 8px 16px -4px rgb(187, 107, 71);
+  -webkit-box-shadow: -5px 8px 16px -4px rgb(187, 107, 71);
+  -moz-box-shadow: -5px 8px 16px -4px rgb(187, 107, 71);
+}
+.saveItButton {
+  font-family: "Neucha", cursive;
+  font-size: large;
+  margin-top: 5px;
+  border-radius: 8px;
+  border-color: #c94c4c;
+}
 .greenButton {
   align-items: center;
   appearance: none;
-  background-color: #4cc95e;
+  background-color: #53895b;
   background-image: linear-gradient(1deg, #52fd4f, #4cf314 99%);
   background-size: calc(100% + 20px) calc(100% + 20px);
   border-radius: 100px;
-  border-width: 0;
-  box-shadow: none;
   box-sizing: border-box;
+  border: none;
   color: black;
   cursor: pointer;
   display: inline-flex;
@@ -104,7 +158,7 @@
   color: black;
   cursor: pointer;
   display: inline-flex;
-  font-family:'Neucha', cursive;
+  font-family: "Neucha", cursive;
   font-size: small;
   height: auto;
   justify-content: center;
@@ -113,7 +167,7 @@
   position: relative;
   text-align: center;
   text-decoration: none;
-  transition: background-color .2s,background-position .2s;
+  transition: background-color 0.2s, background-position 0.2s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -128,20 +182,8 @@
   background-position: -20px -20px;
 }
 .redButton:focus:not(:active) {
-  box-shadow: rgba(194, 29, 29, 0.25) 0 0 0 .125em;
+  box-shadow: rgba(194, 29, 29, 0.25) 0 0 0 0.125em;
 }
-.moodForm{
-  background-color: #f2e5b0;
-  width: fit-content;
-  margin-left: 50px;
-  border-radius: 8px;
-  margin-top: 50px;
-  padding: 10px 10px;
-}
-.dayCard{
-  width: fit-content;
-}
-
 
 @keyframes App-logo-spin {
   from {

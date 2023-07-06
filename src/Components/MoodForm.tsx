@@ -55,9 +55,10 @@ const MoodForm: React.FC<{ day: Value }> = ({ day }) => {
         <div className="textareaDiv">
           <h2>Write down your toughts</h2>
           <h4 id="dayOfForm">{day!.toLocaleString()}</h4>
-          <textarea id="textarea" placeholder="how is your day?"></textarea>
+          <textarea className='textarea' id="textarea" placeholder="how is your day?"></textarea>
         </div>
-        <button onClick={(e) => handleMood(e)}>Choose your mood</button>
+        <div className='buttonDiv'>
+        <button className='chooseMoodButton' onClick={(e) => handleMood(e)}>Choose your mood</button>
         {mood ? (
           <>
             <button
@@ -86,7 +87,8 @@ const MoodForm: React.FC<{ day: Value }> = ({ day }) => {
           <></>
         )}
 
-        <button type="submit">Save it</button>
+        <button className='saveItButton' type="submit">Save it</button>
+        </div>
       </form>
     </>
   );
