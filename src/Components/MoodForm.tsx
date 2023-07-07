@@ -36,18 +36,16 @@ const MoodForm: React.FC<{ day: Value }> = ({ day }) => {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    
-      e.preventDefault();
-      const textareaData: string = e.currentTarget.textarea.value;
-      const dayMoodData: object = {
-        mood: decidedMood,
-        toughts: textareaData,
-        day: day,
-      };
-      localStorage.setItem('dayData', JSON.stringify(dayMoodData))
-      window.location.reload()
+    e.preventDefault();
+    const textareaData: string = e.currentTarget.textarea.value;
+    const dayMoodData: object = {
+      mood: decidedMood,
+      toughts: textareaData,
+      day: day,
+    };
+    localStorage.setItem("dayData", JSON.stringify(dayMoodData));
+    window.location.reload();
   };
-  
 
   return (
     <>
@@ -55,39 +53,50 @@ const MoodForm: React.FC<{ day: Value }> = ({ day }) => {
         <div className="textareaDiv">
           <h2>Write down your toughts</h2>
           <h4 id="dayOfForm">{day!.toLocaleString()}</h4>
-          <textarea className='textarea' id="textarea" placeholder="how is your day?"></textarea>
+          <textarea
+            className="textarea"
+            id="textarea"
+            placeholder="how is your day?"
+          ></textarea>
         </div>
-        <div className='buttonDiv'>
-        <button className='chooseMoodButton' onClick={(e) => handleMood(e)}>Choose your mood</button>
-        {mood ? (
-          <>
-            <button
-              onClick={(e) => handleGreenClick(e)}
-              className="greenButton"
-              style={{ backgroundColor: greenButton ? "green" : "white" }}
-            >
-              Happy
-            </button>
-            <button
-              onClick={(e) => handleYellowClick(e)}
-              className="yellowButton"
-              style={{ backgroundColor: yellowButton ? "yellow" : "white" }}
-            >
-              Ok
-            </button>
-            <button
-              onClick={(e) => handleRedClick(e)}
-              className="redButton"
-              style={{ backgroundColor: redButton ? "red" : "white" }}
-            >
-              Low
-            </button>
-          </>
-        ) : (
-          <></>
-        )}
 
-        <button className='saveItButton' type="submit">Save it</button>
+        
+
+        <div className="buttonDiv">
+          <button className="chooseMoodButton" onClick={(e) => handleMood(e)}>
+            Choose your mood
+          </button>
+          {mood ? (
+            <>
+              <button
+                onClick={(e) => handleGreenClick(e)}
+                className="text-emerald-500 border-2 border-newgreen"
+                style={{ backgroundColor: greenButton ? "green" : "white" }}
+              >
+                Happy
+              </button>
+              <button
+                onClick={(e) => handleYellowClick(e)}
+                className="yellowButton"
+                style={{ backgroundColor: yellowButton ? "yellow" : "white" }}
+              >
+                Ok
+              </button>
+              <button
+                onClick={(e) => handleRedClick(e)}
+                className="redButton"
+                style={{ backgroundColor: redButton ? "red" : "white" }}
+              >
+                Low
+              </button>
+            </>
+          ) : (
+            <></>
+          )}
+
+          <button className="saveItButton" type="submit">
+            Save it
+          </button>
         </div>
       </form>
     </>

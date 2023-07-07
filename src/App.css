@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .App {
   text-align: center;
   display: grid;
@@ -66,7 +62,7 @@
   border-radius: 8px;
   border-color: #c94c4c;
 }
-.greenButton {
+/* .greenButton {
   align-items: center;
   appearance: none;
   background-color: #53895b;
@@ -103,7 +99,7 @@
 }
 .greenButton:focus:not(:active) {
   box-shadow: rgba(29, 194, 81, 0.25) 0 0 0 0.125em;
-}
+} */
 
 .yellowButton {
   align-items: center;
