@@ -49,7 +49,7 @@ const MoodForm: React.FC<{ day: Value }> = ({ day }) => {
 
   return (
     <>
-      <form className="moodForm" onSubmit={(e) => handleSubmit(e)}>
+      <form className="border-solid border-4 border-orange-950 w-fit rounded-md p-2.5"  onSubmit={(e) => handleSubmit(e)}>
         <div className="textareaDiv">
           <h2>Write down your toughts</h2>
           <h4 id="dayOfForm">{day!.toLocaleString()}</h4>
@@ -62,7 +62,7 @@ const MoodForm: React.FC<{ day: Value }> = ({ day }) => {
 
         
 
-        <div className="buttonDiv">
+        <div className="justify-items-center grid">
           <button className="chooseMoodButton" onClick={(e) => handleMood(e)}>
             Choose your mood
           </button>
@@ -70,21 +70,21 @@ const MoodForm: React.FC<{ day: Value }> = ({ day }) => {
             <>
               <button
                 onClick={(e) => handleGreenClick(e)}
-                className="text-emerald-500 border-2 border-newgreen"
+                className="text-emerald-500 border-2 border-newgreen box-border w-20 font-bold"
                 style={{ backgroundColor: greenButton ? "green" : "white" }}
               >
                 Happy
               </button>
               <button
                 onClick={(e) => handleYellowClick(e)}
-                className="yellowButton"
+                className="text-amber-500 border-2 border-amber-700 box-border w-20 font-bold"
                 style={{ backgroundColor: yellowButton ? "yellow" : "white" }}
               >
                 Ok
               </button>
               <button
                 onClick={(e) => handleRedClick(e)}
-                className="redButton"
+                className="text-red-500 border-2 border-red-700 box-border w-20 font-bold"
                 style={{ backgroundColor: redButton ? "red" : "white" }}
               >
                 Low

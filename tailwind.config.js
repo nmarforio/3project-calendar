@@ -8,6 +8,9 @@ module.exports = {
       lg: "976px",
       xl: "1440px",
     },
+    fontFamily: {
+      sans: ["Neucha"],
+    },
     extend: {
       colors: {
         newgreen: "#32a88b",

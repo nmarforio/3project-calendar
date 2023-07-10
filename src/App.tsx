@@ -34,9 +34,9 @@ const App: React.FC<{}> = () => {
       <div className="calendar-container">
         <Calendar onChange={(day) => handleChange(day!)} value={day} />
       </div>
-      <div className='inpuCardContainer'>
+      <div className='flex items-center justify-around mb-12 mt-5'>
       <MoodForm day={day} />
-      <div className="cardDiv">{dayCardcomponent}</div>
+      <div className="border-solid border-4 border-orange-950 w-fit rounded-md p-2.5">{dayCardcomponent}</div>
       </div>
     </div>
   );
