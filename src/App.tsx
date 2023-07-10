@@ -1,11 +1,11 @@
 import React, { Component, ReactComponentElement } from "react";
-import "./App.css";
 import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { Value } from "react-calendar/dist/cjs/shared/types";
 import MoodForm from "./Components/MoodForm";
 import DayCard from "./Components/DayCard";
+import './App.css'
 
 const App: React.FC<{}> = () => {
   const [day, setDay] = useState<Value>(new Date());
