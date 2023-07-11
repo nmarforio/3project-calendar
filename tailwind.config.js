@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       colors: {
         newgreen: "#32a88b",
+        beigebg: "#F0EBCD",
       },
     },
   },

@@ -5,7 +5,7 @@ import "react-calendar/dist/Calendar.css";
 import { Value } from "react-calendar/dist/cjs/shared/types";
 import MoodForm from "./Components/MoodForm";
 import DayCard from "./Components/DayCard";
-import './App.css'
+
 
 const App: React.FC<{}> = () => {
   const [day, setDay] = useState<Value>(new Date());
@@ -26,17 +26,17 @@ const App: React.FC<{}> = () => {
   );
 
   return (
-    <div className="App">
+    <div >
       <title>Calendar</title>
       <header className="App-header">
-        <h1>How do you feel today?</h1>
+        <h1 className="flex justify-center text-5xl my-4">How do you feel today?</h1>
       </header>
-      <div className="calendar-container">
+      <div className="flex justify-center">
         <Calendar onChange={(day) => handleChange(day!)} value={day} />
       </div>
       <div className='flex items-center justify-around mb-12 mt-5'>
       <MoodForm day={day} />
-      <div className="border-solid border-4 border-orange-950 w-fit rounded-md p-2.5">{dayCardcomponent}</div>
+      <div className="border-solid border-4 border-orange-950 w-fit rounded-md p-2.5 bg-beigebg">{dayCardcomponent}</div>
       </div>
     </div>
   );

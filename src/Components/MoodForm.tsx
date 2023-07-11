@@ -49,11 +49,11 @@ const MoodForm: React.FC<{ day: Value }> = ({ day }) => {
 
   return (
     <>
-      <form className="border-solid border-4 border-orange-950 w-fit rounded-md p-2.5"  onSubmit={(e) => handleSubmit(e)}>
+      <form className="border-solid border-4 border-orange-950 w-fit rounded-md p-2.5 mt-4 bg-beigebg justify-center"  onSubmit={(e) => handleSubmit(e)}>
         <div>
           <h2>Write down your toughts</h2>
           <h4 id="dayOfForm">{day!.toLocaleString()}</h4>
-          <textarea
+          <textarea className="font-['Neucha, cursive'] w-48 h-48 rounded-md"
             id="textarea"
             placeholder="how is your day?"
           ></textarea>
